@@ -7,16 +7,16 @@
 
 /* ── This Week hero ───────────────────────────────── */
 .hero {
-  background: var(--blue);
+  background: var(--card);
   border-radius: var(--r-xl);
-  padding: 28px 24px 24px;
+  padding: 28px 24px 22px;
   text-align: center;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
 }
 .heroLabel {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.7);
+  color: var(--text3);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -24,7 +24,7 @@
 .heroEarnings {
   font-size: 3.8rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--green);
   letter-spacing: -0.03em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -32,8 +32,7 @@
 }
 .heroHours {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.75);
-  font-weight: 400;
+  color: var(--text3);
 }
 
 /* ── Early Access ─────────────────────────────────── */
@@ -52,13 +51,13 @@
 .earlyLabel {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--purple);
+  color: var(--text);
 }
 .earlyBadge {
   font-size: 0.68rem;
   font-weight: 600;
-  background: var(--purple-bg);
-  color: var(--purple);
+  background: var(--bg);
+  color: var(--text3);
   border-radius: 20px;
   padding: 2px 8px;
 }
@@ -92,7 +91,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--purple);
+  color: var(--green);
 }
 .earlyRowDivider {
   height: 1px;
@@ -170,8 +169,8 @@
 .nextLoc {
   font-size: 0.72rem;
   font-weight: 600;
-  background: var(--blue-bg);
-  color: var(--blue);
+  background: var(--bg);
+  color: var(--text3);
   padding: 3px 9px;
   border-radius: 20px;
 }

@@ -7,16 +7,16 @@
 
 /* ── Hero ─────────────────────────────────────────── */
 .hero {
-  background: var(--green);
+  background: var(--card);
   border-radius: var(--r-xl);
   padding: 28px 24px 22px;
   text-align: center;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
 }
 .heroLabel {
   font-size: 0.72rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.75);
+  color: var(--text3);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -24,7 +24,7 @@
 .heroAmount {
   font-size: 3.8rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--green);
   letter-spacing: -0.03em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -32,7 +32,7 @@
 }
 .heroHours {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.75);
+  color: var(--text3);
 }
 
 /* ── Early Access ─────────────────────────────────── */
@@ -54,7 +54,7 @@
 .earlyTitle {
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--purple);
+  color: var(--text);
 }
 .earlyMeta {
   font-size: 0.72rem;
@@ -76,7 +76,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--purple);
+  color: var(--green);
   letter-spacing: -0.02em;
 }
 
@@ -141,20 +141,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 18px;
-  background: var(--purple-bg);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .earlyLabel2 {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--purple);
+  color: var(--text3);
 }
 .earlyAmt {
   font-size: 0.92rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--purple);
+  color: var(--text);
 }
 
 .periodShifts { display: flex; flex-direction: column; }

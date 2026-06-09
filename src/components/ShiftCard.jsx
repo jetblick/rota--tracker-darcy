@@ -5,10 +5,10 @@ import s from './ShiftCard.module.css'
 export const SHIFT_TYPES = ['Terrace', 'Bistro', 'BIC Show', 'PAV Show']
 
 const TYPE_COLOURS = {
-  'Terrace':  { bg: 'rgba(255,149,0,0.1)',    text: '#FF9500' },
-  'Bistro':   { bg: 'rgba(52,199,89,0.1)',    text: '#34C759' },
-  'BIC Show': { bg: 'rgba(175,82,222,0.1)',   text: '#AF52DE' },
-  'PAV Show': { bg: 'rgba(0,122,255,0.08)',   text: '#007AFF' },
+  'Terrace':  { bg: 'rgba(60,60,67,0.08)', text: '#3C3C43' },
+  'Bistro':   { bg: 'rgba(60,60,67,0.08)', text: '#3C3C43' },
+  'BIC Show': { bg: 'rgba(60,60,67,0.08)', text: '#3C3C43' },
+  'PAV Show': { bg: 'rgba(60,60,67,0.08)', text: '#3C3C43' },
 }
 
 export default function ShiftCard({ shift, onLogFinish, onDelete, onUpdateBreak, onUpdateType }) {

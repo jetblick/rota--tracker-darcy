@@ -64,8 +64,8 @@
 .loc {
   font-size: 0.72rem;
   font-weight: 600;
-  background: var(--blue-bg);
-  color: var(--blue);
+  background: var(--bg);
+  color: var(--text3);
   padding: 3px 9px;
   border-radius: 20px;
 }

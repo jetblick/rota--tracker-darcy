@@ -60,7 +60,7 @@ export default function PayTab({ shifts }) {
   const weekBars = weekBuckets.map(([ws, ws_shifts]) => ({
     label: weekLabel(ws),
     value: totalEarnings(ws_shifts),
-    color: 'var(--blue)',
+    color: 'var(--green)',
   }))
 
   return (
