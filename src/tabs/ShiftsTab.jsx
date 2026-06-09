@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import {
   groupByWeek, parseLocalDate, formatShortDate, formatFullDate,
-  isoDate, generateId, getWeekStart,
+  isoDate, generateId, getWeekStart, DEFAULT_BREAK_MINS,
 } from '../data.js'
-import ShiftCard from '../components/ShiftCard.jsx'
+import ShiftCard, { SHIFT_TYPES } from '../components/ShiftCard.jsx'
 import s from './ShiftsTab.module.css'
 
 function weekRangeLabel(weekStart) {
@@ -15,10 +15,10 @@ function weekRangeLabel(weekStart) {
   return `${monLabel} – ${sunLabel}`
 }
 
-export default function ShiftsTab({ shifts, onLogFinish, onDelete, onAddShift }) {
+export default function ShiftsTab({ shifts, onLogFinish, onDelete, onAddShift, onUpdateBreak, onUpdateType }) {
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({
-    date: '', startTime: '', endTime: '', isClose: true, location: ''
+    date: '', startTime: '', endTime: '', isClose: true, location: '', breakMins: DEFAULT_BREAK_MINS, shiftType: ''
   })
   const [formError, setFormError] = useState('')
 
@@ -37,6 +37,8 @@ export default function ShiftsTab({ shifts, onLogFinish, onDelete, onAddShift })
       endTime: form.isClose ? (form.endTime || null) : form.endTime || null,
       isClose: form.isClose,
       location: form.location.trim(),
+      breakMins: parseInt(form.breakMins, 10) || 0,
+      shiftType: form.shiftType || null,
       confirmed: true,
     }
     onAddShift(newShift)
@@ -107,6 +109,28 @@ export default function ShiftsTab({ shifts, onLogFinish, onDelete, onAddShift })
               placeholder="CC, PM, Training…"
             />
           </div>
+          <div className={s.formRow}>
+            <label className={s.label}>Shift type</label>
+            <select
+              className={s.input}
+              value={form.shiftType}
+              onChange={e => setForm(f => ({ ...f, shiftType: e.target.value }))}
+            >
+              <option value="">— Select type —</option>
+              {SHIFT_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
+            </select>
+          </div>
+          <div className={s.formRow}>
+            <label className={s.label}>Break (minutes)</label>
+            <input
+              type="number"
+              min="0"
+              max="120"
+              className={s.input}
+              value={form.breakMins}
+              onChange={e => setForm(f => ({ ...f, breakMins: e.target.value }))}
+            />
+          </div>
           {formError && <p className={s.formError}>{formError}</p>}
           <button type="submit" className={s.btnSubmit}>Add shift</button>
         </form>
@@ -129,6 +153,8 @@ export default function ShiftsTab({ shifts, onLogFinish, onDelete, onAddShift })
                 shift={shift}
                 onLogFinish={onLogFinish}
                 onDelete={onDelete}
+                onUpdateBreak={onUpdateBreak}
+                onUpdateType={onUpdateType}
               />
             ))}
           </div>

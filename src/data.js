@@ -3,6 +3,7 @@ export const STORAGE_KEY = 'rota-tracker-darcy-v1'
 export const HOURLY_RATE = 12.71
 export const EARLY_ACCESS_FEE = 2.75
 export const EARLY_ACCESS_MAX = 500
+export const DEFAULT_BREAK_MINS = 30
 
 export const PAY_PERIODS = [
   { label: 'July 2026 Pay',      payday: '2026-07-29', start: '2026-06-01', end: '2026-06-28' },
@@ -37,6 +38,9 @@ export function calcHours(shift) {
   const [eh, em] = shift.endTime.split(':').map(Number)
   let mins = (eh * 60 + em) - (sh * 60 + sm)
   if (mins < 0) mins += 24 * 60 // past midnight
+  // Deduct break (default 30 mins if field missing on old shifts)
+  const breakMins = shift.breakMins ?? DEFAULT_BREAK_MINS
+  mins = Math.max(0, mins - breakMins)
   return +(mins / 60).toFixed(2)
 }
 

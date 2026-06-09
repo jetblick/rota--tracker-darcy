@@ -41,6 +41,20 @@ export default function App() {
     }))
   }
 
+  function handleUpdateBreak(shiftId, breakMins) {
+    updateData(d => ({
+      ...d,
+      shifts: d.shifts.map(s => s.id === shiftId ? { ...s, breakMins } : s),
+    }))
+  }
+
+  function handleUpdateType(shiftId, shiftType) {
+    updateData(d => ({
+      ...d,
+      shifts: d.shifts.map(s => s.id === shiftId ? { ...s, shiftType } : s),
+    }))
+  }
+
   function handleAddShift(shift) {
     updateData(d => ({ ...d, shifts: [...d.shifts, shift] }))
   }
@@ -60,7 +74,7 @@ export default function App() {
       {/* Header */}
       <header className={s.header}>
         <span className={s.logo}>BHLive</span>
-        <span className={s.tagline}>Darcy · Summer 2026</span>
+        <span className={s.tagline}>Darcy - Summer 2026</span>
       </header>
 
       {/* Tab content */}
@@ -82,6 +96,8 @@ export default function App() {
             onLogFinish={handleLogFinish}
             onDelete={handleDelete}
             onAddShift={handleAddShift}
+            onUpdateBreak={handleUpdateBreak}
+            onUpdateType={handleUpdateType}
           />
         )}
         {tab === 'pay' && (

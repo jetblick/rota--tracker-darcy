@@ -61,6 +61,7 @@
   width: 100%;
 }
 .input:focus { border-color: var(--amber); }
+select.input { appearance: none; cursor: pointer; }
 
 .formRowCheck {
   display: flex;
