@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "PowerShell(Get-Command node, npm -ErrorAction SilentlyContinue)",
+      "PowerShell($env:PATH -split \";\")",
+      "PowerShell(Get-ChildItem \"C:\\\\\" -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"node|nvm\" }; Get-ChildItem \"$env:LOCALAPPDATA\" -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"node|nvm\" })",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

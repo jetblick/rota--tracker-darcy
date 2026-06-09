@@ -1,0 +1,152 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.15s;
+}
+
+.card.pending {
+  border-color: rgba(245, 166, 35, 0.25);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.loc {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: var(--border-bright);
+  color: var(--text-dim);
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.earn {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.earnPending {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--amber);
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.time {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+.hours {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dimmer);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+}
+
+.btnLog {
+  background: var(--amber-dim);
+  color: var(--amber);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.btnLog:hover { background: rgba(245, 166, 35, 0.2); }
+
+.picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.timeInput {
+  background: var(--bg);
+  border: 1px solid var(--border-bright);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  outline: none;
+}
+.timeInput:focus { border-color: var(--amber); }
+
+.btnConfirm {
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.btnConfirm:disabled { opacity: 0.4; cursor: default; }
+.btnConfirm:not(:disabled):hover { background: rgba(52, 211, 153, 0.2); }
+
+.btnCancel {
+  background: transparent;
+  color: var(--text-dimmer);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+}
+.btnCancel:hover { color: var(--text-dim); border-color: var(--border-bright); }
+
+.btnDelete {
+  background: transparent;
+  color: var(--text-dimmer);
+  border: none;
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  margin-left: auto;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.btnDelete:hover { color: var(--red); }
