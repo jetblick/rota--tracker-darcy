@@ -134,7 +134,7 @@ export function parseRotaFile(file) {
           }
         }
 
-        // Scan data rows for Darcy's shifts
+        // Scan data rows for Jordan's shifts
         const found = []
         for (let rowIdx = headerRowIdx + 1; rowIdx < rows.length; rowIdx++) {
           const row = rows[rowIdx]
@@ -162,6 +162,7 @@ export function parseRotaFile(file) {
               endTime: null,
               isClose: true,
               location: location || '',
+              breakMins: 30,
               confirmed: true,
               // Extra debug info shown in preview
               _raw: {
