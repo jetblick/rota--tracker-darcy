@@ -1,34 +1,34 @@
 .card {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 14px;
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  transition: border-color 0.15s;
+  gap: 7px;
 }
 
-/* Shift type */
+.card.pending {
+  border-left: 3px solid var(--orange);
+}
+
+/* ── Shift type ──────────────────────────────────── */
 .typeRow {
   display: flex;
   align-items: center;
-  margin-bottom: 2px;
 }
 .typeBadge {
-  background: var(--border-bright);
-  border: 1px solid var(--border-bright);
-  border-radius: 6px;
-  color: var(--text-dimmer);
-  font-family: var(--font-body);
-  font-size: 0.72rem;
+  background: var(--bg);
+  border: none;
+  border-radius: 20px;
+  color: var(--text3);
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 3px 10px;
+  padding: 4px 12px;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: background 0.15s;
 }
-.typeBadge:hover { border-color: var(--amber); color: var(--amber); }
+.typeBadge:active { opacity: 0.7; }
 .typePicker {
   display: flex;
   align-items: center;
@@ -36,119 +36,103 @@
   flex-wrap: wrap;
 }
 .typeOption {
-  border: 1px solid;
-  border-radius: 6px;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 4px 12px;
   cursor: pointer;
   transition: opacity 0.15s;
 }
-.typeOption:hover { opacity: 0.8; }
+.typeOption:active { opacity: 0.7; }
 
-.card.pending {
-  border-color: rgba(245, 166, 35, 0.25);
-}
-
+/* ── Top row ─────────────────────────────────────── */
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .left {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .date {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--text);
-}
-
-.loc {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  background: var(--border-bright);
-  color: var(--text-dim);
-  padding: 2px 7px;
-  border-radius: 4px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.earn {
-  font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 0.95rem;
+}
+.loc {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--blue-bg);
+  color: var(--blue);
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+.earn {
+  font-size: 1rem;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   color: var(--green);
 }
-
 .earnPending {
-  font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--amber);
-  opacity: 0.7;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-bg);
+  padding: 3px 9px;
+  border-radius: 20px;
 }
 
+/* ── Middle ──────────────────────────────────────── */
 .middle {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .time {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-dim);
-  letter-spacing: 0.02em;
+  font-size: 0.88rem;
+  color: var(--text3);
+  font-variant-numeric: tabular-nums;
 }
-
 .hours {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-dimmer);
+  font-size: 0.78rem;
+  color: var(--text4);
+  font-variant-numeric: tabular-nums;
 }
 
-/* Break row */
+/* ── Break ───────────────────────────────────────── */
 .breakRow {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding-top: 4px;
 }
 .breakLabel {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text4);
   text-transform: uppercase;
-  min-width: 36px;
+  letter-spacing: 0.04em;
+  min-width: 38px;
 }
 .breakValue {
-  background: transparent;
-  border: 1px dashed var(--border-bright);
-  border-radius: 5px;
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 2px 8px;
+  background: var(--bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--text3);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
   display: flex;
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  transition: border-color 0.15s;
+  font-variant-numeric: tabular-nums;
 }
-.breakValue:hover { border-color: var(--amber); color: var(--text); }
+.breakValue:active { opacity: 0.7; }
 .breakDeduct {
   color: var(--red);
-  opacity: 0.7;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 .breakEdit {
   display: flex;
@@ -157,91 +141,87 @@
 }
 .breakInput {
   background: var(--bg);
-  border: 1px solid var(--amber);
-  border-radius: 5px;
+  border: 1.5px solid var(--blue);
+  border-radius: 8px;
   color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  padding: 3px 8px;
-  width: 60px;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  padding: 4px 10px;
+  width: 64px;
   outline: none;
 }
 .breakUnit {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-dimmer);
+  font-size: 0.75rem;
+  color: var(--text4);
 }
 
+/* ── Actions ─────────────────────────────────────── */
 .actions {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 2px;
   flex-wrap: wrap;
+  padding-top: 2px;
 }
 
 .btnLog {
-  background: var(--amber-dim);
-  color: var(--amber);
-  border: 1px solid rgba(245, 166, 35, 0.3);
-  border-radius: 6px;
-  padding: 5px 12px;
-  font-size: 0.78rem;
-  font-family: var(--font-body);
-  font-weight: 500;
-  transition: background 0.15s;
+  background: var(--orange-bg);
+  color: var(--orange);
+  border: none;
+  border-radius: var(--r-sm);
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
-.btnLog:hover { background: rgba(245, 166, 35, 0.2); }
+.btnLog:active { opacity: 0.7; }
 
 .picker {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   flex-wrap: wrap;
 }
-
 .timeInput {
   background: var(--bg);
-  border: 1px solid var(--border-bright);
+  border: 1.5px solid var(--blue);
+  border-radius: 8px;
   color: var(--text);
-  border-radius: 6px;
-  padding: 5px 10px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  padding: 6px 10px;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
   outline: none;
 }
-.timeInput:focus { border-color: var(--amber); }
 
 .btnConfirm {
-  background: var(--green-dim);
+  background: var(--green-bg);
   color: var(--green);
-  border: 1px solid rgba(52, 211, 153, 0.3);
-  border-radius: 6px;
-  padding: 5px 12px;
-  font-size: 0.78rem;
-  font-weight: 500;
+  border: none;
+  border-radius: var(--r-sm);
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 .btnConfirm:disabled { opacity: 0.4; cursor: default; }
-.btnConfirm:not(:disabled):hover { background: rgba(52, 211, 153, 0.2); }
+.btnConfirm:not(:disabled):active { opacity: 0.7; }
 
 .btnCancel {
-  background: transparent;
-  color: var(--text-dimmer);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 5px 10px;
-  font-size: 0.78rem;
+  background: var(--bg);
+  color: var(--text3);
+  border: none;
+  border-radius: var(--r-sm);
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
 }
-.btnCancel:hover { color: var(--text-dim); border-color: var(--border-bright); }
+.btnCancel:active { opacity: 0.7; }
 
 .btnDelete {
   background: transparent;
-  color: var(--text-dimmer);
   border: none;
-  font-size: 0.75rem;
+  color: var(--text4);
+  font-size: 0.8rem;
   padding: 4px 6px;
   margin-left: auto;
-  border-radius: 4px;
-  transition: color 0.15s;
+  border-radius: 6px;
 }
-.btnDelete:hover { color: var(--red); }
+.btnDelete:active { color: var(--red); }

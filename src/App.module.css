@@ -4,46 +4,44 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
-/* Header */
+/* ── Header ─────────────────────────────────────────── */
 .header {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  padding: 18px 20px 10px;
-  border-bottom: 1px solid var(--border);
+  gap: 8px;
+  padding: 16px 20px 12px;
+  background: rgba(242, 242, 247, 0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--separator);
   position: sticky;
   top: 0;
-  background: rgba(10, 10, 10, 0.92);
-  backdrop-filter: blur(8px);
   z-index: 10;
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  letter-spacing: 0.08em;
-  color: var(--amber);
-  line-height: 1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .tagline {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text3);
 }
 
-/* Main */
+/* ── Main ───────────────────────────────────────────── */
 .main {
   flex: 1;
-  padding: 0 20px 100px;
+  padding: 0 16px 100px;
   overflow-y: auto;
 }
 
-/* Bottom nav */
+/* ── Tab bar ────────────────────────────────────────── */
 .nav {
   position: fixed;
   bottom: 0;
@@ -53,9 +51,10 @@
   max-width: 560px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: rgba(20, 20, 20, 0.95);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border);
+  background: rgba(249, 249, 249, 0.94);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid var(--separator);
   padding-bottom: env(safe-area-inset-bottom, 0px);
   z-index: 20;
 }
@@ -64,25 +63,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
   padding: 10px 0 12px;
   background: transparent;
   border: none;
-  color: var(--text-dimmer);
+  color: var(--text4);
   transition: color 0.15s;
 }
-.navBtn:hover { color: var(--text-dim); }
-.navBtn.active { color: var(--amber); }
+.navBtn.active { color: var(--blue); }
 
 .navIcon {
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   line-height: 1;
-  font-family: var(--font-mono);
 }
 
 .navLabel {
-  font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
 }

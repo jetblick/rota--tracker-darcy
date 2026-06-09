@@ -1,46 +1,49 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 16px 0;
+  gap: 12px;
+  padding: 20px 0;
 }
 
+/* ── Hero ─────────────────────────────────────────── */
 .hero {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  background: var(--green);
+  border-radius: var(--r-xl);
   padding: 28px 24px 22px;
   text-align: center;
+  box-shadow: var(--shadow);
 }
 .heroLabel {
-  font-size: 0.75rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.heroAmount {
-  font-family: var(--font-display);
-  font-size: 4.2rem;
-  color: var(--green);
-  line-height: 1;
   margin-bottom: 6px;
 }
+.heroAmount {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
 .heroHours {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-dimmer);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
 }
 
-/* Early */
+/* ── Early Access ─────────────────────────────────── */
 .earlyCard {
-  background: var(--purple-dim);
-  border: 1px solid rgba(167,139,250,0.2);
-  border-radius: 12px;
-  padding: 14px 16px;
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 .earlyLeft {
@@ -49,14 +52,14 @@
   gap: 4px;
 }
 .earlyTitle {
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   color: var(--purple);
 }
 .earlyMeta {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-dimmer);
+  font-size: 0.72rem;
+  color: var(--text4);
+  font-variant-numeric: tabular-nums;
 }
 .earlyRight {
   display: flex;
@@ -65,130 +68,118 @@
   gap: 2px;
 }
 .earlyTotal {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-dim);
+  font-size: 0.78rem;
+  color: var(--text3);
+  font-variant-numeric: tabular-nums;
 }
 .earlyAmount {
-  font-family: var(--font-mono);
   font-size: 1.2rem;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   color: var(--purple);
+  letter-spacing: -0.02em;
 }
 
-/* Charts */
+/* ── Charts ───────────────────────────────────────── */
 .chartCard {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: var(--r-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
 }
 .chartTitle {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  letter-spacing: 0.06em;
-  color: var(--text-dim);
-  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text2);
+  margin-bottom: 14px;
 }
 
-/* Periods */
+/* ── Periods ──────────────────────────────────────── */
 .periodsTitle {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.06em;
-  color: var(--text-dim);
-  padding: 4px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  padding: 6px 2px 2px;
 }
 
 .periodCard {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 .periodHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 16px 8px;
+  padding: 16px 18px 6px;
 }
 .periodLabel {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 .periodEarned {
-  font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   color: var(--green);
+  letter-spacing: -0.02em;
 }
 .periodMeta {
   display: flex;
   justify-content: space-between;
-  padding: 0 16px 8px;
+  padding: 0 18px 10px;
 }
 .periodRange, .periodPayday {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-dimmer);
+  font-size: 0.72rem;
+  color: var(--text4);
+  font-variant-numeric: tabular-nums;
 }
 .periodEarly {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
-  background: var(--purple-dim);
+  padding: 10px 18px;
+  background: var(--purple-bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .earlyLabel2 {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--purple);
-  opacity: 0.8;
 }
 .earlyAmt {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   color: var(--purple);
 }
 
-.periodShifts {
-  display: flex;
-  flex-direction: column;
-}
+.periodShifts { display: flex; flex-direction: column; }
 .periodShiftRow {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-bottom: 1px solid var(--border);
 }
 .periodShiftRow:last-child { border-bottom: none; }
 
-.psDate {
-  font-size: 0.82rem;
-  min-width: 90px;
-}
-.psTime {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-dim);
-  flex: 1;
-}
-.psEarn {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--green);
-}
+.psDate { font-size: 0.88rem; font-weight: 500; min-width: 88px; }
+.psTime { font-size: 0.8rem; color: var(--text3); flex: 1; font-variant-numeric: tabular-nums; }
+.psEarn { font-size: 0.88rem; font-weight: 700; color: var(--green); font-variant-numeric: tabular-nums; }
 .psPending {
-  color: var(--amber);
-  font-size: 0.72rem;
-  opacity: 0.7;
+  color: var(--orange);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--orange-bg);
+  padding: 2px 8px;
+  border-radius: 20px;
 }
 .noShifts {
-  padding: 12px 16px;
-  font-size: 0.78rem;
-  color: var(--text-dimmer);
+  padding: 14px 18px;
+  font-size: 0.85rem;
+  color: var(--text4);
 }

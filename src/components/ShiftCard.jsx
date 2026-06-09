@@ -5,10 +5,10 @@ import s from './ShiftCard.module.css'
 export const SHIFT_TYPES = ['Terrace', 'Bistro', 'BIC Show', 'PAV Show']
 
 const TYPE_COLOURS = {
-  'Terrace':  { bg: 'rgba(245,166,35,0.12)',  border: 'rgba(245,166,35,0.35)',  text: '#f5a623' },
-  'Bistro':   { bg: 'rgba(52,211,153,0.12)',  border: 'rgba(52,211,153,0.35)',  text: '#34d399' },
-  'BIC Show': { bg: 'rgba(167,139,250,0.12)', border: 'rgba(167,139,250,0.35)', text: '#a78bfa' },
-  'PAV Show': { bg: 'rgba(96,165,250,0.12)',  border: 'rgba(96,165,250,0.35)',  text: '#60a5fa' },
+  'Terrace':  { bg: 'rgba(255,149,0,0.1)',    text: '#FF9500' },
+  'Bistro':   { bg: 'rgba(52,199,89,0.1)',    text: '#34C759' },
+  'BIC Show': { bg: 'rgba(175,82,222,0.1)',   text: '#AF52DE' },
+  'PAV Show': { bg: 'rgba(0,122,255,0.08)',   text: '#007AFF' },
 }
 
 export default function ShiftCard({ shift, onLogFinish, onDelete, onUpdateBreak, onUpdateType }) {
@@ -54,7 +54,6 @@ export default function ShiftCard({ shift, onLogFinish, onDelete, onUpdateBreak,
             className={s.typeBadge}
             style={typeStyle ? {
               background: typeStyle.bg,
-              borderColor: typeStyle.border,
               color: typeStyle.text,
             } : {}}
             onClick={() => setEditingType(true)}
@@ -69,7 +68,7 @@ export default function ShiftCard({ shift, onLogFinish, onDelete, onUpdateBreak,
                 <button
                   key={t}
                   className={s.typeOption}
-                  style={{ background: c.bg, borderColor: c.border, color: c.text }}
+                  style={{ background: c.bg, color: c.text }}
                   onClick={() => handleTypeSelect(t)}
                 >
                   {t}

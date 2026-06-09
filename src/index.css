@@ -5,32 +5,58 @@
 }
 
 :root {
-  --bg: #0a0a0a;
-  --card: #141414;
-  --border: #1f1f1f;
-  --border-bright: #2a2a2a;
-  --text: #e8e8e8;
-  --text-dim: #888;
-  --text-dimmer: #555;
-  --amber: #f5a623;
-  --amber-dim: rgba(245, 166, 35, 0.12);
-  --green: #34d399;
-  --green-dim: rgba(52, 211, 153, 0.12);
-  --purple: #a78bfa;
-  --purple-dim: rgba(167, 139, 250, 0.12);
-  --red: #f87171;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-body: 'Outfit', sans-serif;
+  /* Apple system font stack */
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+          'Helvetica Neue', Arial, sans-serif;
+
+  /* Light mode palette — iOS */
+  --bg:            #F2F2F7;
+  --bg2:           #FFFFFF;
+  --card:          #FFFFFF;
+  --border:        rgba(60, 60, 67, 0.1);
+  --separator:     rgba(60, 60, 67, 0.13);
+
+  /* Text */
+  --text:          #000000;
+  --text2:         #3C3C43;
+  --text3:         #6D6D72;
+  --text4:         #AEAEB2;
+
+  /* System colours */
+  --blue:          #007AFF;
+  --green:         #34C759;
+  --orange:        #FF9500;
+  --purple:        #AF52DE;
+  --red:           #FF3B30;
+  --teal:          #32ADE6;
+
+  /* Tinted backgrounds */
+  --blue-bg:       rgba(0, 122, 255, 0.08);
+  --green-bg:      rgba(52, 199, 89, 0.1);
+  --orange-bg:     rgba(255, 149, 0, 0.1);
+  --purple-bg:     rgba(175, 82, 222, 0.1);
+  --red-bg:        rgba(255, 59, 48, 0.08);
+
+  /* Shadows */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow:        0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-lg:     0 4px 20px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.06);
+
+  /* Radius */
+  --r-sm:   8px;
+  --r:      12px;
+  --r-lg:   16px;
+  --r-xl:   20px;
 }
 
 html, body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 16px;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -41,16 +67,13 @@ html, body {
 }
 
 input, button, select, textarea {
-  font-family: inherit;
+  font-family: var(--font);
 }
 
-button {
-  cursor: pointer;
-}
+button { cursor: pointer; }
 
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+/* Numeric figures look better tabular */
+.mono {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
 }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }

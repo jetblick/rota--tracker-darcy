@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 16px 0;
+  padding: 20px 0;
 }
 
 .header {
@@ -12,31 +12,31 @@
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  letter-spacing: 0.06em;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .btnAdd {
-  background: var(--amber-dim);
-  color: var(--amber);
-  border: 1px solid rgba(245,166,35,0.3);
-  border-radius: 8px;
+  background: var(--blue-bg);
+  color: var(--blue);
+  border: none;
+  border-radius: 20px;
   padding: 8px 16px;
-  font-size: 0.82rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
-.btnAdd:hover { background: rgba(245,166,35,0.2); }
+.btnAdd:active { opacity: 0.7; }
 
-/* Add form */
+/* ── Add form ─────────────────────────────────────── */
 .form {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: var(--r-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 .formRow {
   display: flex;
@@ -44,23 +44,24 @@
   gap: 5px;
 }
 .label {
-  font-size: 0.75rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text3);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 .input {
   background: var(--bg);
-  border: 1px solid var(--border-bright);
-  border-radius: 7px;
+  border: 1.5px solid transparent;
+  border-radius: var(--r-sm);
   color: var(--text);
-  padding: 8px 12px;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  padding: 10px 12px;
+  font-size: 0.95rem;
   outline: none;
   width: 100%;
+  transition: border-color 0.15s;
 }
-.input:focus { border-color: var(--amber); }
+.input:focus { border-color: var(--blue); background: #fff; }
 select.input { appearance: none; cursor: pointer; }
 
 .formRowCheck {
@@ -70,41 +71,49 @@ select.input { appearance: none; cursor: pointer; }
 .checkLabel {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: var(--text-dim);
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text2);
   cursor: pointer;
 }
 .checkLabel input[type="checkbox"] {
-  accent-color: var(--amber);
-  width: 16px;
-  height: 16px;
+  accent-color: var(--blue);
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
 }
+
 .formError {
   color: var(--red);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 500;
 }
+
 .btnSubmit {
-  background: var(--green-dim);
-  color: var(--green);
-  border: 1px solid rgba(52,211,153,0.3);
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 0.88rem;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-sm);
+  padding: 13px;
+  font-size: 0.95rem;
   font-weight: 600;
   width: 100%;
-  margin-top: 4px;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(0,122,255,0.25);
 }
-.btnSubmit:hover { background: rgba(52,211,153,0.2); }
+.btnSubmit:active { opacity: 0.85; }
 
 .empty {
   text-align: center;
-  color: var(--text-dimmer);
-  font-size: 0.85rem;
-  padding: 20px;
+  color: var(--text4);
+  font-size: 0.9rem;
+  padding: 28px 16px;
+  background: var(--card);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
 }
 
-/* Week group */
+/* ── Week groups ──────────────────────────────────── */
 .weekGroup {
   display: flex;
   flex-direction: column;
@@ -114,18 +123,17 @@ select.input { appearance: none; cursor: pointer; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2px;
+  padding: 0 4px;
 }
 .weekRange {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text3);
+  font-variant-numeric: tabular-nums;
 }
 .weekCount {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-dimmer);
+  font-size: 0.75rem;
+  color: var(--text4);
 }
 .weekShifts {
   display: flex;

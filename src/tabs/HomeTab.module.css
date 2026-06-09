@@ -1,71 +1,71 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 16px 0;
+  gap: 12px;
+  padding: 20px 0;
 }
 
-/* Hero */
+/* ── This Week hero ───────────────────────────────── */
 .hero {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  background: var(--blue);
+  border-radius: var(--r-xl);
   padding: 28px 24px 24px;
   text-align: center;
+  box-shadow: var(--shadow);
 }
 .heroLabel {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.heroEarnings {
-  font-family: var(--font-display);
-  font-size: 4.5rem;
-  color: var(--green);
-  letter-spacing: 0.02em;
-  line-height: 1;
   margin-bottom: 6px;
 }
+.heroEarnings {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
 .heroHours {
-  font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.75);
+  font-weight: 400;
 }
 
-/* Early Access */
+/* ── Early Access ─────────────────────────────────── */
 .earlyCard {
-  background: var(--purple-dim);
-  border: 1px solid rgba(167, 139, 250, 0.2);
-  border-radius: 12px;
-  padding: 16px 18px;
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 14px;
+  box-shadow: var(--shadow-sm);
 }
 .earlyHeader {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 .earlyLabel {
-  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 600;
-  font-size: 0.9rem;
   color: var(--purple);
 }
 .earlyBadge {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  background: rgba(167, 139, 250, 0.2);
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: var(--purple-bg);
   color: var(--purple);
-  border-radius: 4px;
-  padding: 2px 7px;
+  border-radius: 20px;
+  padding: 2px 8px;
 }
 .earlyAmounts {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 .earlyRow {
   display: flex;
@@ -73,79 +73,83 @@
   align-items: center;
 }
 .earlyDim {
-  font-size: 0.82rem;
-  color: var(--text-dim);
+  font-size: 0.85rem;
+  color: var(--text3);
 }
 .earlyEarned {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
   color: var(--text);
 }
-.earlyAvail {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--purple);
-}
 .earlyFee {
-  font-family: var(--font-mono);
   font-size: 0.88rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
   color: var(--red);
-  opacity: 0.8;
+}
+.earlyAvail {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--purple);
 }
 .earlyRowDivider {
   height: 1px;
-  background: rgba(167, 139, 250, 0.15);
+  background: var(--border);
   margin: 2px 0;
 }
 .earlyDates {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-dimmer);
+  font-size: 0.72rem;
+  color: var(--text4);
   margin-top: 10px;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Stats row */
+/* ── Stats row ────────────────────────────────────── */
 .statsRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 .statCard {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 .statLabel {
   font-size: 0.72rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: var(--text3);
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 .statValue {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
-/* Next shift */
+/* ── Next shift ───────────────────────────────────── */
 .nextCard {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 .nextLabel {
   font-size: 0.72rem;
-  color: var(--text-dimmer);
-  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: var(--text3);
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 .nextInfo {
@@ -156,25 +160,24 @@
 }
 .nextDate {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 .nextTime {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-dim);
+  font-size: 0.88rem;
+  color: var(--text3);
+  font-variant-numeric: tabular-nums;
 }
 .nextLoc {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  background: var(--border-bright);
-  color: var(--text-dim);
-  padding: 2px 8px;
-  border-radius: 4px;
-  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--blue-bg);
+  color: var(--blue);
+  padding: 3px 9px;
+  border-radius: 20px;
 }
 .noNext {
   text-align: center;
-  font-size: 0.82rem;
-  color: var(--text-dimmer);
-  padding: 12px;
+  font-size: 0.85rem;
+  color: var(--text4);
+  padding: 16px;
 }
