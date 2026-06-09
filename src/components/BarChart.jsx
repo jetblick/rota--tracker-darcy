@@ -1,56 +1,76 @@
-// Simple inline SVG bar chart — no external charting dep needed
-export default function BarChart({ bars, height = 120 }) {
-  // bars: [{ label, value, color }]
+export default function BarChart({ bars, height = 160 }) {
   if (!bars || bars.length === 0) return null
+
   const max = Math.max(...bars.map(b => b.value), 0.01)
-  const barW = 100 / bars.length
+  const LABEL_HEIGHT = 36   // space at bottom for label + value
+  const TOP_PAD = 16        // space above tallest bar
+  const chartH = height - LABEL_HEIGHT - TOP_PAD
+  const BAR_RADIUS = 6
 
   return (
     <div style={{ width: '100%', userSelect: 'none' }}>
-      <svg
-        viewBox={`0 0 100 ${height}`}
-        preserveAspectRatio="none"
-        style={{ width: '100%', height: `${height}px`, display: 'block', overflow: 'visible' }}
-      >
+      <div style={{
+        display: 'flex',
+        alignItems: 'flex-end',
+        gap: '8px',
+        height: `${height}px`,
+        padding: `${TOP_PAD}px 4px 0`,
+      }}>
         {bars.map((bar, i) => {
-          const bh = max > 0 ? (bar.value / max) * (height - 28) : 0
-          const x = i * barW + barW * 0.15
-          const w = barW * 0.7
-          const y = height - 20 - bh
+          const fillRatio = bar.value / max
+          const barH = Math.max(fillRatio * chartH, bar.value > 0 ? 4 : 0)
+          const isEmpty = bar.value === 0
+
           return (
-            <g key={i}>
-              <rect
-                x={x} y={y} width={w} height={Math.max(bh, 0)}
-                rx="1.5"
-                fill={bar.color || 'var(--amber)'}
-                opacity="0.85"
-              />
-              {/* value label */}
-              {bar.value > 0 && (
-                <text
-                  x={x + w / 2} y={y - 3}
-                  textAnchor="middle"
-                  fontSize="5"
-                  fill="var(--text-dim)"
-                  fontFamily="JetBrains Mono, monospace"
-                >
-                  £{bar.value.toFixed(0)}
-                </text>
-              )}
-              {/* axis label */}
-              <text
-                x={x + w / 2} y={height - 6}
-                textAnchor="middle"
-                fontSize="5.5"
-                fill="var(--text-dimmer)"
-                fontFamily="Outfit, sans-serif"
-              >
+            <div key={i} style={{
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              height: '100%',
+              gap: '6px',
+            }}>
+              {/* Value label above bar */}
+              <div style={{
+                fontSize: '0.72rem',
+                fontWeight: 600,
+                fontVariantNumeric: 'tabular-nums',
+                color: isEmpty ? 'transparent' : 'var(--text3)',
+                letterSpacing: '-0.01em',
+                whiteSpace: 'nowrap',
+                lineHeight: 1,
+              }}>
+                £{bar.value.toFixed(0)}
+              </div>
+
+              {/* Bar */}
+              <div style={{
+                width: '100%',
+                height: `${barH}px`,
+                background: bar.color || 'var(--blue)',
+                borderRadius: `${BAR_RADIUS}px ${BAR_RADIUS}px ${BAR_RADIUS}px ${BAR_RADIUS}px`,
+                opacity: isEmpty ? 0.15 : 1,
+                minHeight: isEmpty ? '3px' : undefined,
+                transition: 'height 0.3s ease',
+              }} />
+
+              {/* Axis label */}
+              <div style={{
+                fontSize: '0.75rem',
+                fontWeight: 500,
+                color: 'var(--text3)',
+                letterSpacing: '-0.01em',
+                textAlign: 'center',
+                lineHeight: 1,
+                paddingBottom: '4px',
+              }}>
                 {bar.label}
-              </text>
-            </g>
+              </div>
+            </div>
           )
         })}
-      </svg>
+      </div>
     </div>
   )
 }
